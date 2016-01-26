@@ -1,7 +1,7 @@
 
 # README
 
-FROST
+###FROST- Static web page generator
 
 ## Prerequisites
 
@@ -11,7 +11,7 @@ Before you start, make sure you have this thing installed:
 
 ##Configuring Frost
 
-The Frost configuration files are location on the 'config' folder. Each file on that folder represents an `--env` option on execution. You can export the following variables inside the configuration files:
+The Frost configuration files are located on the 'config' folder. Each file on that folder represents an `--env` option on execution. You can export the following variables inside the configuration files:
 
   * staticDir: "../path/para/static"
     * The relative path to the Frost root folder. This is where the static files will be put
@@ -74,13 +74,13 @@ $ phantomjs index.js --list="/" --mode="crawl" --env="{env}"
 
 ##Downloading assets
 
-In some situations, we will need to download physical files from the dynamic site and put them on the static folder. For that, we have created the `-type` option.
+In some situations, you will need to download physical files from the dynamic site and put them on the static folder. For that, we have created the `--type` option.
 
   `$ phantomjs index.js --type="asset"`
 
 Just like the main command, you can still pass `--env` and `--list`:
 
-  * `--env`:  Just like the showed before.
+  * `--env`:  Just like shown before.
 
   * `--list: "/panel/sitemap.xml->sitemap.xml,/app.css->styles/app.css"`
     * This is a bit different that the `--type="page"` form. Here, the paths are also splitted by comma, but you need to specify the origin and destination from the file:
