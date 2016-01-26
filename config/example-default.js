@@ -13,8 +13,8 @@ module.exports = {
   /* 
    * General Configuration
    */
-  staticDir: "../app/public/static"
-
+  staticDir: "../app/public/static", // Static files directory
+  pageLoadTimeout: 35,               // The time Frost will wait for the page to load
 
   /*
    * Origin Configuration

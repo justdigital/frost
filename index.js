@@ -17,6 +17,7 @@ global.Cfg = Cfg;
 var type = options.getOption("type", "page");
 var mode = options.getOption("mode", "crawl");
 var list = options.getOption("list", Cfg.baseUrl());
+var pageLoadTimeout = options.getOption("pageLoadTimeout", 35 * 1000);
 
 // Building the formatted arguments from the input
 if (type === "page") {
@@ -34,12 +35,12 @@ if (type === "page") {
 } else {
   // Unrecognized type error
   console.log("Unrecognized type, please use 'asset' or 'page'.");
-  return;
+  phantom.exit(1);
 }
 
 // Frost handling
 var frost = new Frost({
-  pageLoadTimeout: 35000,
+  pageLoadTimeout: pageLoadTimeout,
   type: type,
   mode: mode,
   list: list
