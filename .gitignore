@@ -1,2 +1,6 @@
 config/*.js
 !config/example*.js
+*/*.swp
+**/*.swp
+*/*.swo
+**/*.swo
