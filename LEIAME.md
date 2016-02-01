@@ -12,10 +12,10 @@ Antes de começar, se certifique de ter o item abaixo instalado:
 ## Configurando o Frost
 
 
-Os arquivos de configuração do Frost estão localizados na pasta 'config'. Cada arquivo nesta pasta representa uma opção `--env` em execução. Você pode exportar as variáveis abaixo dentro dos arquivos de configuração:
+Os arquivos de configuração do Frost estão localizados na pasta 'config'. Cada arquivo nesta pasta representa uma opção `--env` no momento da execução. Você pode exportar as variáveis abaixo dentro dos arquivos de configuração:
 
   * staticDir: "../path/para/static"
-    * O caminho relativo para a pasta raíz do Frost. É onde ficarão os arquivos estáticos
+    * O caminho relativo para a pasta raíz do site. É onde ficarão os arquivos estáticos gerados pelo Frost
 
   * scheme: "http|https"
     * O protocolo do site de origem
@@ -50,13 +50,13 @@ Você também deve espeficiar algumas opções:
 
   * `--mode`: "list" ou "crawl" (obrigatório)
     * list  - faz o Frost rodar em uma lista específica de links, nenhum a mais ou a menos.
-    * crawl - faz o Frost rodar em todas as páginas em uma lista de links e suas páginas filhas (Não é recomendado usar o modo 'crawl' em uma execução automática porquê é difícil adivinhar o tempo de execução).
+    * crawl - faz o Frost rodar em todas as páginas em uma lista de links e suas páginas filhas (Não é recomendado usar o modo 'crawl' em uma execução automática por que é difícil adivinhar o tempo total de execução).
     *OBS: O modo crawl não segue nenhum link mais de uma vez*
 
   * `--list`: "/,/link1/path,/products" (obrigatório)
-    * A lista de caminhos para ser seguido pelo Frost. É recomendado que se você usar mode="crawl", a lista deve ter somente um caminho (geralmente o caminho "/").
+    * A lista de caminhos para ser seguido pelo Frost. É recomendado que se você usar `--mode="crawl"`, a lista deve ter somente um caminho (geralmente o caminho "/").
 
-  * `--type`: O tipo de comportamento do Frost, o padrão é "page".
+  * `--type`: O tipo de comportamento do Frost, o padrão é "page". (mais informação em "Baixando Assets")
 
   * `--env`: "default|local|hom|prod|etc" (padrão: "default")
     * Especifica qual arquivo de configuração usar. O arquivo de configuração deve estar na pasta config/{env}.js
