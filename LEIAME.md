@@ -24,7 +24,7 @@ Os arquivos de configuração do Frost estão localizados na pasta 'config'. Cad
     * O hostname do site de origem
 
   * baseUrl: (function)
-    * A função que gera a URL base, altere essa função caso você queira algo mais específico, por exemplo adicionar uma condição para o postfix
+    * A função que gera a URL base, altere essa função caso você queira algo mais específico, por exemplo, adicionar uma condição para o postfix
 
   * staticScheme: "http|https"
     * O protocolo do site estático (destino)
@@ -94,11 +94,11 @@ Assim como o comando principal, você ainda pode passar as opções `--env` e `-
 ## Contribuindo
 
 
-O sistema de contribuição do Frost usa o GitHub para gerenciar os pull-requests. Então, basicamente, para contribuir, você irá fazer um [fork](https://help.github.com/articles/fork-a-repo/), exeutar o commit de suas alterações e submeter um pull-request baseado na issue criada por qualquer usuário GitHub. Seguem alguns passos mais detalhados:
+O sistema de contribuição do Frost usa o GitHub para gerenciar os pull-requests. Então, basicamente, para contribuir, você irá fazer um [fork](https://help.github.com/articles/fork-a-repo/), executar o commit de suas alterações e submeter um pull-request baseado na issue criada por qualquer usuário GitHub. Seguem alguns passos mais detalhados:
 
 1. Faça um [fork](https://help.github.com/articles/fork-a-repo/) do projeto e configure o repositório.
 2. Crie uma nova branch para trabalhar: **git checkout -b nova_branch**
-3. Trabalhe no código e realize o commit de suas alterações. **ALERTA: Você deve realisar o commit de seus arquivos com quebra de linhas LF. [Leia mais aqui](https://help.github.com/articles/dealing-with-line-endings/)**
+3. Trabalhe no código e realize o commit de suas alterações. **ALERTA: Você deve realizar o commit de seus arquivos com quebra de linhas LF. [Leia mais aqui](https://help.github.com/articles/dealing-with-line-endings/)**
 4. Depois de ter certeza que seu código foi totalmente testado, você pode realizar seu push no repositório remoto: **git push origin nova_branch**
 5. Agora você deve criar um [pull-request](https://help.github.com/articles/creating-a-pull-request) com um título específico, uma boa descrição contendo **o número da issue** e um pedaço de documentação explicando o que você fez.
 6. Os contribuidores do código irão revisar as alterações agora, tenha em mente que é muito comum receber pedido de alteração de código, então, tente acompanhá-los ou discutir a importância do pedido de alteração para ter certeza que tudo foi feito da melhor maneira possível.
