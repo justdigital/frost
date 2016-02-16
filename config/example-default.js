@@ -23,10 +23,10 @@ module.exports = {
   /*****************************
    * Page Writer Configuration *
    *****************************/
-  customScript: "alert(\"yo!\")",      // Add a custom script when the page loads
-  baseTag: true,                       // Whether to add a <base> tag to the generated pages
-  bodyClass: "static",                 // Add any css class to the <body> tag?
-  doctype: "<!doctype html>",          // What doctype to use on generated files
+  customScript: "alert(\"yo!\");",      // Add a custom script when the page loads
+  baseTag: true,                        // Whether to add a <base> tag to the generated pages
+  bodyClass: "static",                  // Add any css class to the <body> tag?
+  doctype: "<!doctype html>",           // What doctype to use on generated files
   
   // Path expressions (RegExp) to apply on the moment of writing the file 
   pathReplacePatterns: [{
