@@ -9,51 +9,58 @@ Antes de começar, se certifique de ter o item abaixo instalado:
 
 1. [phantomjs](http://phantomjs.org/)
 
-## Configurando o Frost
+## Instalando o Frost
 
+A instalação do frost é feita de forma simples:
+
+```
+git clone https://github.com/justdigital/frost.git
+```
+
+Para facilitar a execução do comando, crie uma entrada na pasta de binários de seu usuário no sistema operacional:
+
+```
+$ ln -s /path/para/frost/bin/frost /usr/local/bin/frost
+```
+
+## Configurando o Frost
 
 Os arquivos de configuração do Frost estão localizados na pasta 'config'. Cada arquivo nesta pasta representa uma opção `--env` no momento da execução. Você pode exportar as variáveis abaixo dentro dos arquivos de configuração:
 
-  * staticDir: "../path/para/static"
-    * O caminho relativo para a pasta raíz do site. É onde ficarão os arquivos estáticos gerados pelo Frost
-
-  * scheme: "http|https"
-    * O protocolo do site de origem
-
-  * hostname: "origin.example.com"
-    * O hostname do site de origem
-
-  * baseUrl: (function)
-    * A função que gera a URL base, altere essa função caso você queira algo mais específico, por exemplo, adicionar uma condição para o postfix
-
-  * staticScheme: "http|https"
-    * O protocolo do site estático (destino)
-
-  * staticHostname: "example.com"
-    * O hostname do site de destino
-
-  * staticBaseUrl: (function)
-    * Mesmo que baseUrl mas para o site de destino
-
-  * pageLoadTimeout
-    * Máximo de tempo em segundos que o Frost vai esperar pelo site carregar
+  |Option|Tipo|Descrição|
+  |:-|:-|-:|
+  |baseTag|bool|Colocar ou não uma tag base nos arquivos gerados|
+  |baseUrl|function|A função que retorna o base URL montado do site de origem (sem barra no final)|
+  |bodyClass|string|Qualquer classe css para adicionar para a tag body das páginas geradas|
+  |customScript|string|Script que será executado apenas nas páginas estáticas geradas. Isso é usado quando um script deverá executar só em páginas geradas pelo Frost e não nas outras, por exemplo, scripts de analytics ou ads.|
+  |doctype|string|O doctype das páginas geradas|
+  |downloadAssets|bool|Define se o Frost vai baixar arquivos CSS e JS.|
+  |hostname|string|O hostname do site de origem|
+  |pageLoadTimeout|inteiro|O tempo máximo (em segundos) que o Frost vai aguardar o carregamento da página|
+  |pathReplacePatterns|array|Esses patterns serão utilizados no momento de salvar os arquivos. Além disso, Frost vai aplicar essa regra em todos os atributos href de links.  Os objetos de replace deverão ser declarados como no arquivo config/default-example.js|
+  |scheme|"http/https"|O protocolo do site de origem|
+  |staticBaseUrl|function|A função que retorna o base URL montado do site destino (sem barra no final)|
+  |staticDir|string|O path relativo à root do Frost que aponta para a pasta onde os arquivos gerados devem ser salvos|
+  |staticHostname|string|O hostname do site destino|
+  |staticScheme|"http/https"|O protocolo do site destino (estático)|
+  |userAgent|string|User agent usado pelo Frost ao visitar as páginas|
 
 ## Executando
 
 Para rodar o Frost por linha de comando você deve usar o comando abaixo:
 
 ```
-$ phantomjs index.js
+$ frost
 ```
 
 Você também deve espeficiar algumas opções:
 
-  * `--mode`: "list" ou "crawl" (obrigatório)
+  * `--mode`: "list" ou "crawl" (padrão: crawl)
     * list  - faz o Frost rodar em uma lista específica de links, nenhum a mais ou a menos.
     * crawl - faz o Frost rodar em todas as páginas em uma lista de links e suas páginas filhas (Não é recomendado usar o modo 'crawl' em uma execução automática por que é difícil adivinhar o tempo total de execução).
     *OBS: O modo crawl não segue nenhum link mais de uma vez*
 
-  * `--list`: "/,/link1/path,/products" (obrigatório)
+  * `--list`: "/,/link1/path,/products" (padrão: /)
     * A lista de caminhos para ser seguido pelo Frost. É recomendado que se você usar `--mode="crawl"`, a lista deve ter somente um caminho (geralmente o caminho "/").
 
   * `--type`: O tipo de comportamento do Frost, o padrão é "page". (mais informação em "Baixando Assets")
@@ -66,11 +73,11 @@ Dois exemplos básicos de implementação:
 
 1º `"list"`
 ```
-$ phantomjs index.js --list="/,/products,/recipes" --mode="list" --env="{env}"
+$ frost --list="/,/products,/recipes" --mode="list" --env="{env}"
 ```
 2º `"crawl"`
 ```
-$ phantomjs index.js --list="/" --mode="crawl" --env="{env}"
+$ frost --list="/" --mode="crawl" --env="{env}"
 ```
 
 ## Baixando assets
@@ -78,12 +85,12 @@ $ phantomjs index.js --list="/" --mode="crawl" --env="{env}"
 
 Em algumas situações, você precisará baixar arquivos físicos do site dinâmico e colocá-los no diretório estático. Para isso, nós criamos a opção `--type`.
 
-  `$ phantomjs index.js --type="asset"`
+  `$ frost --type="asset"`
 
 Assim como o comando principal, você ainda pode passar as opções `--env` e `--list`:
 
-  * `--env`:  Como mostrado anteriormente.
-
+  * `--path-replace-inside-assets: "true|false" (default: false)`
+    * Faz com que a funcionalidade de path replacing atue sobre os assets da lista indicada
   * `--list: "/panel/sitemap.xml->sitemap.xml,/app.css->styles/app.css"`
     * Esse é um pouco diferente da opção `--type="page"`. Aqui, os caminhos também são separados por vírgula, mas você precisa especificar a origem e destino do arquivo:
 

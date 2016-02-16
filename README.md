@@ -10,45 +10,52 @@ Before you start, make sure you have this thing installed:
 
 1. [phantomjs](http://phantomjs.org/)
 
+## Installing Frost
+
+Frost installation is simple:
+
+```
+git clone https://github.com/justdigital/frost.git
+```
+
+To make it easier to execute, create a symlink to the bin folder of your user:
+
+```
+$ ln -s /path/to/frost/bin/frost /usr/local/bin/frost
+```
+
 ##Configuring Frost
 
 The Frost configuration files are located on the 'config' folder. Each file on that folder represents an `--env` option on execution. You can export the following variables inside the configuration files:
-
-  * staticDir: "../path/para/static"
-    * The relative path to the Frost root folder. This is where the static files will be put
-
-  * scheme: "http|https"
-    * The origin website protocol
-
-  * hostname: "origin.example.com"
-    * The origin site hostname
-
-  * baseUrl: (function)
-    * The baseUrl generator function, change this if you want something more specific like adding a condition to the postfix
-
-  * staticScheme: "http|https"
-    * The static website protocol (destination)
-
-  * staticHostname: "example.com"
-    * Destination hostname
-
-  * staticBaseUrl: (function)
-    * Same as baseUrl but for the destination website
-
-  * pageLoadTimeout
-    * The maximum time that frost will wait for the website to load (in seconds)
+|Option|Type|Description|
+|:-|:-|-:|
+|baseTag|bool|Wether to add a base tag containing the new site URL to the generated html file|
+|baseUrl|function|The baseUrl generator function, change this if you want something more specific like adding a condition to the postfix|
+|bodyClass|string|Any class you want to add to the body tag|
+|customScript|string|Script frost will append on your static page. This is used if you need your static pages to execute some javascript that your origin pages don't.|
+|doctype|string|The doctype of the generated pages|
+|downloadAssets|bool|Wether Frost will download CSS and JS assets from pages|
+|hostname|string|The origin site hostname|
+|pageLoadTimeout|integer|The maximum time (in seconds) Frost will wait for the page to load
+|pathReplacePatterns|array|Frost will use this replace patterns on the moment of saving the files. Also, Frost will replace href on link tags. The replace objects must be declared like the example in the config/example-default.js file|
+|scheme|"http/https"|The origin website protocol|
+|staticBaseUrl|function|Same as baseUrl but for the destination website|
+|staticDir|string|The path to the Frost root folder. This is where the static files will be put|
+|staticHostname|string|Desitnation hostname|
+|staticScheme|"http/https"|The static website protocol (destination)|
+|userAgent|string|User agent Frost will use to visit your site|
 
 ## Execution
 
 To run Frost from the command line you should use the following command:
 
 ```
-$ phantomjs index.js
+$ frost
 ```
 
 Also, you must specify some options:
 
-  * `--mode`: "list" or "crawl" (required)
+  * `--mode`: "list" or "crawl" (default: crawl)
     * list  - makes Frost run on a specified list of links, no more or less.
     * crawl - makes Frost run on every page on a list of links AND their child pages (It is not recommended to use the 'crawl' mode on a automatic execution because it can be hard to predict the execution time).
     *PS: The crawl mode does not follow any link more than once*
@@ -66,23 +73,23 @@ Two basic implementation examples:
 
 1st `"list"`
 ```
-$ phantomjs index.js --list="/,/products,/recipes" --mode="list" --env="{env}"
+$ frost --list="/,/products,/recipes" --mode="list" --env="{env}"
 ```
 2nd `"crawl"`
 ```
-$ phantomjs index.js --list="/" --mode="crawl" --env="{env}"
+$ frost --list="/" --mode="crawl" --env="{env}"
 ```
 
 ##Downloading assets
 
 In some situations, you will need to download physical files from the dynamic site and put them on the static folder. For that, we have created the `--type` option.
 
-  `$ phantomjs index.js --type="asset"`
+  `$ frost --type="asset"`
 
 Just like the main command, you can still pass `--env` and `--list`:
 
-  * `--env`:  Just like shown before.
-
+  * `--path-replace-inside-assets (default: false)`
+    * Makes the path replacing functionality work on the files given on the --list option    
   * `--list: "/panel/sitemap.xml->sitemap.xml,/app.css->styles/app.css"`
     * This is a bit different that the `--type="page"` form. Here, the paths are also splitted by comma, but you need to specify the origin and destination from the file:
 
