@@ -28,7 +28,7 @@ $ ln -s /path/to/frost/bin/frost /usr/local/bin/frost
 
 The Frost configuration files are located on the 'config' folder. Each file on that folder represents an `--env` option on execution. You can export the following variables inside the configuration files:
 |Option|Type|Description|
-|:-|:-|-:|
+|:---|:---|---:|
 |baseTag|bool|Wether to add a base tag containing the new site URL to the generated html file|
 |baseUrl|function|The baseUrl generator function, change this if you want something more specific like adding a condition to the postfix|
 |bodyClass|string|Any class you want to add to the body tag|

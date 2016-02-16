@@ -28,7 +28,7 @@ $ ln -s /path/para/frost/bin/frost /usr/local/bin/frost
 Os arquivos de configuração do Frost estão localizados na pasta 'config'. Cada arquivo nesta pasta representa uma opção `--env` no momento da execução. Você pode exportar as variáveis abaixo dentro dos arquivos de configuração:
 
   |Option|Tipo|Descrição|
-  |:-|:-|-:|
+  |:---|:---|---:|
   |baseTag|bool|Colocar ou não uma tag base nos arquivos gerados|
   |baseUrl|function|A função que retorna o base URL montado do site de origem (sem barra no final)|
   |bodyClass|string|Qualquer classe css para adicionar para a tag body das páginas geradas|
