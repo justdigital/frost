@@ -5,19 +5,21 @@
  */
 
 // Dependency loading
-var options = require("./lib/options.js");
-var Frost   = require("./lib/frost.js");
+var options = require(phantom.libraryPath + "/lib/options.js");
+var Frost   = require(phantom.libraryPath + "/lib/frost.js");
 
 // Environment detection and config loading
 var env = options.getOption("env", "default");
-var Cfg = require("./config/" + env + ".js");
+var Cfg = require(phantom.libraryPath + "/config/" + env + ".js");
 global.Cfg = Cfg;
 
 // Argument parsing
 var type = options.getOption("type", "page");
 var mode = options.getOption("mode", "crawl");
 var list = options.getOption("list", Cfg.baseUrl());
-var pageLoadTimeout = options.getOption("pageLoadTimeout", 35 * 1000);
+var pathReplaceInsideAssets = options.getOption("path-replace-inside-assets", false);
+var pageLoadTimeout = Cfg.pageLoadTimeout || 35;
+pageLoadTimeout *= 1000;
 
 // Building the formatted arguments from the input
 if (type === "page") {
@@ -43,5 +45,6 @@ var frost = new Frost({
   pageLoadTimeout: pageLoadTimeout,
   type: type,
   mode: mode,
-  list: list
+  list: list,
+  pathReplaceInsideAssets: pathReplaceInsideAssets
 });

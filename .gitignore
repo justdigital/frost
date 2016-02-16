@@ -4,3 +4,5 @@ config/*.js
 **/*.swp
 */*.swo
 **/*.swo
+*.status
+*.error
