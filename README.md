@@ -33,7 +33,7 @@ The Frost configuration files are located on the 'config' folder. Each file in t
 |baseTag|bool|Wether to add a base tag containing the new site URL to the generated html file|
 |baseUrl|function|The baseUrl generator function, change this if you want something more specific like adding a condition to the postfix|
 |bodyClass|string|Any class you want to add to the body tag|
-|customScript|string|Script frost will append on your static page. This is used if you need your static pages to execute some javascript that your origin pages don't.|
+|customScript|string|Script frost will append on your static page. This is used if you need your static pages to execute some javascript that your origin pages don't. For example, analytcs or ad scripts.|
 |doctype|string|The doctype of the generated pages|
 |downloadAssets|bool|Wether Frost will download CSS and JS assets from pages|
 |hostname|string|The origin site hostname|
@@ -42,7 +42,7 @@ The Frost configuration files are located on the 'config' folder. Each file in t
 |scheme|"http/https"|The origin website protocol|
 |staticBaseUrl|function|Same as baseUrl but for the destination website|
 |staticDir|string|The path to the Frost root folder. This is where the static files will be put|
-|staticHostname|string|Desitnation hostname|
+|staticHostname|string|Destination hostname|
 |staticScheme|"http/https"|The static website protocol (destination)|
 |userAgent|string|User agent Frost will use to visit your site|
 
@@ -83,7 +83,7 @@ $ frost --list="/" --mode="crawl" --env="{env}"
 
 ##Downloading assets
 
-In some situations, you will need to download physical files from the dynamic site and put them on the static folder. For that, we have created the `--type` option.
+In some situations, you will need to download physical files from the dynamic site and put them in the static folder. For that, we have created the `--type` option.
 
   `$ frost --type="asset"`
 
