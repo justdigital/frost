@@ -26,7 +26,8 @@ $ ln -s /path/to/frost/bin/frost /usr/local/bin/frost
 
 ##Configuring Frost
 
-The Frost configuration files are located on the 'config' folder. Each file on that folder represents an `--env` option on execution. You can export the following variables inside the configuration files:
+The Frost configuration files are located on the 'config' folder. Each file in that folder represents an `--env` option on execution. You can export the following variables inside the configuration files:
+
 |Option|Type|Description|
 |:---|:---|---:|
 |baseTag|bool|Wether to add a base tag containing the new site URL to the generated html file|

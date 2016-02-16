@@ -27,23 +27,23 @@ $ ln -s /path/para/frost/bin/frost /usr/local/bin/frost
 
 Os arquivos de configuração do Frost estão localizados na pasta 'config'. Cada arquivo nesta pasta representa uma opção `--env` no momento da execução. Você pode exportar as variáveis abaixo dentro dos arquivos de configuração:
 
-  |Option|Tipo|Descrição|
-  |:---|:---|---:|
-  |baseTag|bool|Colocar ou não uma tag base nos arquivos gerados|
-  |baseUrl|function|A função que retorna o base URL montado do site de origem (sem barra no final)|
-  |bodyClass|string|Qualquer classe css para adicionar para a tag body das páginas geradas|
-  |customScript|string|Script que será executado apenas nas páginas estáticas geradas. Isso é usado quando um script deverá executar só em páginas geradas pelo Frost e não nas outras, por exemplo, scripts de analytics ou ads.|
-  |doctype|string|O doctype das páginas geradas|
-  |downloadAssets|bool|Define se o Frost vai baixar arquivos CSS e JS.|
-  |hostname|string|O hostname do site de origem|
-  |pageLoadTimeout|inteiro|O tempo máximo (em segundos) que o Frost vai aguardar o carregamento da página|
-  |pathReplacePatterns|array|Esses patterns serão utilizados no momento de salvar os arquivos. Além disso, Frost vai aplicar essa regra em todos os atributos href de links.  Os objetos de replace deverão ser declarados como no arquivo config/default-example.js|
-  |scheme|"http/https"|O protocolo do site de origem|
-  |staticBaseUrl|function|A função que retorna o base URL montado do site destino (sem barra no final)|
-  |staticDir|string|O path relativo à root do Frost que aponta para a pasta onde os arquivos gerados devem ser salvos|
-  |staticHostname|string|O hostname do site destino|
-  |staticScheme|"http/https"|O protocolo do site destino (estático)|
-  |userAgent|string|User agent usado pelo Frost ao visitar as páginas|
+|Option|Tipo|Descrição|
+|:---|:---|---:|
+|baseTag|bool|Colocar ou não uma tag base nos arquivos gerados|
+|baseUrl|function|A função que retorna o base URL montado do site de origem (sem barra no final)|
+|bodyClass|string|Qualquer classe css para adicionar para a tag body das páginas geradas|
+|customScript|string|Script que será executado apenas nas páginas estáticas geradas. Isso é usado quando um script deverá executar só em páginas geradas pelo Frost e não nas outras, por exemplo, scripts de analytics ou ads.|
+|doctype|string|O doctype das páginas geradas|
+|downloadAssets|bool|Define se o Frost vai baixar arquivos CSS e JS.|
+|hostname|string|O hostname do site de origem|
+|pageLoadTimeout|inteiro|O tempo máximo (em segundos) que o Frost vai aguardar o carregamento da página|
+|pathReplacePatterns|array|Esses patterns serão utilizados no momento de salvar os arquivos. Além disso, Frost vai aplicar essa regra em todos os atributos href de links.  Os objetos de replace deverão ser declarados como no arquivo config/default-example.js|
+|scheme|"http/https"|O protocolo do site de origem|
+|staticBaseUrl|function|A função que retorna o base URL montado do site destino (sem barra no final)|
+|staticDir|string|O path relativo à root do Frost que aponta para a pasta onde os arquivos gerados devem ser salvos|
+|staticHostname|string|O hostname do site destino|
+|staticScheme|"http/https"|O protocolo do site destino (estático)|
+|userAgent|string|User agent usado pelo Frost ao visitar as páginas|
 
 ## Executando
 
