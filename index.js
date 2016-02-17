@@ -10,7 +10,12 @@ var Frost   = require(phantom.libraryPath + "/lib/frost.js");
 
 // Environment detection and config loading
 var env = options.getOption("env", "default");
-var Cfg = require(phantom.libraryPath + "/config/" + env + ".js");
+try {
+  var Cfg = require(phantom.libraryPath + "/config/" + env + ".js");
+} catch (e) {
+  console.log("No configuration file with name " + env + ".js was found on the config folder");
+  phantom.exit(1);
+}
 global.Cfg = Cfg;
 
 // Argument parsing
