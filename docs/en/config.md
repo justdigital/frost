@@ -29,7 +29,7 @@ You can export the following variables inside the configuration files:
   pageLoadTimeout: 1-9999
     The maximum time (in seconds) Frost will wait for the page to load
 
-  pathReplacePatterns: (array replace objects)
+  pathReplacePatterns: (array of replace objects)
     Frost will use this replace patterns on the moment of saving the files. Also, Frost will replace href on link tags
     The replace objects must be declared like the example in the config/example-default.js file
 
