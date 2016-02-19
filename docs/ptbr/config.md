@@ -33,6 +33,10 @@ No arquivo de configuração, você pode definir as seguintes variáveis:
     Esses patterns serão utilizados no momento de salvar os arquivos. Além disso, Frost vai aplicar essa regra em todos os atributos href de links.
     Os objetos de replace deverão ser declarados como no arquivo config/default-example.js
 
+  removeHashSymbol: true|false
+    Transformar ou não hashes em paths, exemplo:
+    example.com/#/foo/bar -> example.com/foo/bar
+
   scheme: "http|https"
     O protocolo do site de origem
 

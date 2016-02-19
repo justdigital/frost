@@ -17,6 +17,7 @@ module.exports = {
   pageLoadTimeout: 35,                         // The time in seconds Frost will wait for the page to load
   downloadAssets: false,                       // Whether to download assets or not (JS and CSS)
   userAgent: "Frost 1.0 Webkit",               // What user agent to use on the requests
+  removeHashSymbol: false,                     // Transforms paths into hash, eg.: /#/foo/bar -> /foo/bar
 
 
 

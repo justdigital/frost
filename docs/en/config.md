@@ -33,6 +33,10 @@ You can export the following variables inside the configuration files:
     Frost will use this replace patterns on the moment of saving the files. Also, Frost will replace href on link tags
     The replace objects must be declared like the example in the config/example-default.js file
 
+  removeHashSymbol: true|false
+    Transforms hash into path, eg.:
+    example.com/#/foo/bar -> example.com/foo/bar
+
   scheme: "http|https"
     The origin website protocol
 
