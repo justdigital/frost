@@ -1,10 +1,10 @@
-html, body {
-  height: 100%;
-}
-
 h1, h2, h3, h4 {
   padding: 0;
   margin: 0;
+}
+
+object {
+  display: none;
 }
 
 ul {
@@ -33,7 +33,7 @@ code {
 }
 
 .step-1 code {
-  background: rgba(239, 245, 245, 0.2);;
+  background: rgba(239, 245, 245, 0.8);
 }
 
 section {
@@ -49,6 +49,7 @@ section {
   position: relative;
   background-color: #32BBBA;
   z-index: 2;
+  height: 100vh;
 }
 
 .intro:before {
@@ -63,12 +64,21 @@ section {
   pointer-events: none;
 }
 
-.intro .github-docs {
+.github-docs {
   position: absolute;
-  right: 25px;
-  top: 10px;
-  color: #000;
+  left: 25px;
+  top: 25px;
+  color: #fff;
   font-weight: bold;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.github-docs:hover {
+  color: #00458a;
 }
 
 .logo {
@@ -100,7 +110,6 @@ section {
 }
 
 .logo a, .button {
-  width: 96px;
   background: #00458a;
   padding: 20px;
   border-radius: 8px;
@@ -121,7 +130,6 @@ section {
 
 .logo .what-is {
   float: right;
-  width: 120px;
 }
 
 .down-arrow {
@@ -140,7 +148,7 @@ section {
   background-color: #32BBBA;
 }
 
-.first {
+.first-container {
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -149,6 +157,7 @@ section {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 60px;
 }
 
 .configs {
@@ -184,6 +193,7 @@ section {
 .running h3 {
   color: #fff;
   font-weight: bold;
+  margin-bottom: 60px;
 }
 
 .container {
@@ -191,10 +201,18 @@ section {
   margin: 0 auto;
   max-width: 1000px;
   height: 100%;
+  padding: 20px 0;
 }
 
 #what-is {
   height: auto;
+  background: #00458a;
+  color: #fff;
+}
+
+.what-is-container h3 {
+  color: #fff;
+  font-weight: bold;
 }
 
 .what-is-container h4 {
@@ -204,10 +222,10 @@ section {
 
 .what-is-container .button {
   margin: auto;
-  display: block;
-  float: none;
+  background-color: #fff;
+  color: #00458a;
+  max-width: 110px;
 }
-
 
 .env .desc code {
   padding: 0;
@@ -305,7 +323,10 @@ section {
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   text-align: center;
+  font-weight: bold;
+  display: block;
 }
+
 .button:hover {
   background-color: #003163;
   color: #fff;
