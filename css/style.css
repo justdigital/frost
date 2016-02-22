@@ -1,0 +1,333 @@
+html, body {
+  height: 100%;
+}
+
+h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #00458a;
+}
+
+h3 {
+  color: #00458a;
+  text-align: center;
+  font-size: 34px;
+  font-weight: normal;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+code {
+  background: rgba(50, 187, 186,0.2);
+  padding: 2px 10px;
+}
+
+.step-1 code {
+  background: rgba(239, 245, 245, 0.2);;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  min-height: 360px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.intro {
+  position: relative;
+  background-color: #32BBBA;
+  z-index: 2;
+}
+
+.intro:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  background: url('images/snow-transparent.gif');
+  display: block;
+  pointer-events: none;
+}
+
+.intro .github-docs {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  color: #000;
+  font-weight: bold;
+}
+
+.logo {
+  width: 528px;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -120px;
+  bottom: 0;
+}
+
+.logo h1 {
+  width: 528px;
+  height: 120px;
+  color: #fff;
+  background: url(../img/logo-frost.png) no-repeat;
+  text-indent: -9999px;
+  margin: 0;
+}
+
+.logo p {
+  text-align: center;
+  color: #fff;
+  font-size: 21px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.logo a, .button {
+  width: 96px;
+  background: #00458a;
+  padding: 20px;
+  border-radius: 8px;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.buttons {
+  overflow: hidden;
+  margin-top: 40px;
+  padding: 0 70px;
+}
+
+.started {
+  float: left;
+}
+
+.logo .what-is {
+  float: right;
+  width: 120px;
+}
+
+.down-arrow {
+  background: url(images/down.png);
+  width: 50px;
+  position: absolute;
+  height: 50px;
+  right: 70px;
+  bottom: 60px;
+  background-size: 50px 50px;
+}
+
+.step-1 {
+  min-height: 900px;
+  height: auto;
+  background-color: #32BBBA;
+}
+
+.first {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.highlighted-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.configs {
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.configs li p {
+  padding-left: 30px;
+}
+
+.problem {
+  font-size: 20px;
+}
+
+.running-button {
+  display: block;
+  padding: 16px;
+  width: 120px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #00458a;
+}
+
+.running {
+  background-color: #00458a;
+  color: #fff;
+  height: auto;
+}
+
+.running h3 {
+  color: #fff;
+  font-weight: bold;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1000px;
+  height: 100%;
+}
+
+#what-is {
+  height: auto;
+}
+
+.what-is-container h4 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.what-is-container .button {
+  margin: auto;
+  display: block;
+  float: none;
+}
+
+
+.env .desc code {
+  padding: 0;
+}
+
+.examples {
+  margin-top: 60px;
+}
+
+.examples p {
+  text-align: center;
+}
+
+.example-list, {
+  margin-bottom: 40px;
+}
+
+.running .desc {
+  padding: 0 0 0 20px;
+}
+
+.running hr {
+  border-color: #32BBBA;
+}
+
+.footer {
+  background: #32BBBA;
+  height: 70px;
+  min-height: 70px;
+  z-index: 2;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.footer h3 {
+  text-align: left;
+  float: left;
+  margin-top: 16px;
+}
+
+.powered-by {
+  overflow: hidden;
+  width: 363px;
+  height: 100%;
+  float: right;
+  margin-right: 40px;
+}
+
+.powered-by a {
+  text-decoration: none;
+  color: #00458a;
+  display: block;
+  float: right;
+  margin-top: 21px;
+}
+
+.just-logo {
+  background: url(../img/logo-just.png) no-repeat;
+  display: block;
+  float: right;
+  text-indent: -100%;
+  overflow: hidden;
+  width: 150px;
+  height: 34px;
+  margin-top: 2px;
+}
+
+
+/* Components */
+.back-to-top {
+  background: url(images/back_to_top.png) no-repeat;
+  width: 44px;
+  height: 44px;
+  position: fixed;
+  right: 0;
+  right: 70px;
+  bottom: 25px;
+  z-index: 1;
+  opacity: 0.5;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+}
+
+.button {
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  text-align: center;
+}
+.button:hover {
+  background-color: #003163;
+  color: #fff;
+}
+
+@keyframes topDown {
+  0%, to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+  10%,30%,50%,70%,90% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px)
+  }
+  20%,40%,60%,80% {
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px)
+  }
+}
+.shake {
+  -webkit-animation: topDown 8s ease-in infinite;
+  animation: topDown 8s ease-in infinite;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}

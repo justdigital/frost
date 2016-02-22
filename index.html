@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Frost</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a href="#intro" class="back-to-top"></a>
+    <section id="intro" class="intro">
+      <a class="github-docs" target="_blank" href="https://github.com/justdigital/frost">See full documentation here</a>
+      <div class="logo">
+        <h1>Frost</h1>
+        <p><b>Static web page generator</b></p>
+        <div class="buttons">
+          <a class="started button" href="#step-1">Get started!</a>
+          <a class="what-is button" href="#what-is">What's Frost?</a>
+        </div>
+      </div>
+      <i class="shake down-arrow"></i>
+    </section>
+    <section id="what-is">
+      <div class="what-is-container container">
+        <h3>What's Frost?</h3>
+        <h4>Frost is a static web page generator</h4>
+        <p class="problem">If you have a website that don't provide a static html per page and you want to do that, all that you need to do is:</p>
+        <p><b>1 )</b> Setting up the Frost configuration with the paths of your "origin", the path of your "static" site (where your final files will be) and others configurations.</p>
+        <p><b>2 )</b> Run the index.js with phatomjs.</p>
+        <p><b>3 )</b> AWWW YEAH! You'll have a folder that contains all pages of your website with the anchors directing to your "staticHostname/page/node".</p>
+        <a class="started button" href="#step-1">First Step</a>
+      </div>
+    </section>
+    <section class="step-1" id="step-1">
+      <div class="first">
+        <h3>Configuring Frost</h3>
+        <p class="highlighted-title">Before you start, make sure you have <b><a href="http://phantomjs.org/" target="_blank">phantomjs</a></b> installed.</p>
+        <ul class="configs">
+          <li>
+            <code>baseTag: true|false</code>
+            <p>
+              Wether to add a base tag containing the new site URL to the generated html file
+            </p>
+          </li>
+          <li>
+            <code>baseUrl: (function)</code>
+            <p>The baseUrl generator function, change this if you want something more specific like adding a condition to the postfix</p>
+          </li>
+          <li>
+            <code>bodyClass: "css-classname"</code>
+            <p>Any class you want to add to the body tag</p>
+          </li>
+          <li>
+            <code>customScript: "Any.javascript.code();"</code>
+            <p>Script frost will append on your static page.<br />This is used if you need your static pages to execute some javascript that your origin pages don't.</p>
+          </li>
+          <li>
+            <code>doctype: "&lt;!doctype html&gt;"</code>
+            <p>The doctype of the generated pages</p>
+          </li>
+          <li>
+            <code>downloadAssets: true|false</code>
+            <p>Wether Frost will download CSS and JS assets from pages</p>
+          </li>
+          <li>
+            <code>hostname: "origin.example.com"</code>
+            <p>The origin site hostname</p>
+          </li>
+          <li>
+            <code>pageLoadTimeout: 1-9999</code>
+            <p>The maximum time (in seconds) Frost will wait for the page to load</p>
+          </li>
+          <li>
+            <code>pathReplacePatterns: (array of replace objects)</code>
+            <p>Frost will use this replace patterns on the moment of saving the files. Also, Frost will replace href on link tags. <br /> The replace objects must be declared like the example in the config/example-default.js file</p>
+          </li>
+          <li>
+            <code>scheme: "http|https"</code>
+            <p>The origin website protocol</p>
+          </li>
+          <li>
+            <code>staticBaseUrl: (function)</code>
+            <p>Same as baseUrl but for the destination website</p>
+          </li>
+          <li>
+            <code>staticDir: "/path/to/static"</code>
+            <p>The path to the Frost root folder. This is where the static files will be put</p>
+          </li>
+          <li>
+            <code>staticHostname: "example.com"</code>
+            <p>Desitnation hostname</p>
+          </li>
+          <li>
+            <code>staticScheme: "http|https"</code>
+            <p>The static website protocol (destination)</p>
+          </li>
+          <li>
+            <code>userAgent: "any user agent"</code>
+            <p>User agent Frost will use to visit your site</p>
+          </li>
+        </ul>
+        <a class="running-button button" href="#step-2">Second Step</a>
+      </div>
+    </section>
+    <section class="running" id="step-2">
+      <div class="running-container container">
+        <h3>Running Frost!</h3>
+        <p>To run Frost from the command line you should use the following command:</p>
+        <code>$ frost</code>
+        <p>Also, you must specify some options:</p>
+        <div class="mode">
+          <p><code>--mode:</code> "list" or "crawl" (required)</p>
+          <p class="desc">list - makes Frost run on a specified list of links, no more or less.</p>
+          <p class="desc">crawl - makes Frost run on every page on a list of links AND their child pages (It is not recommended to use the 'crawl' mode on a automatic execution because it can be hard to predict the execution time). PS: The crawl mode does not follow any link more than once</p>
+        </div>
+        <hr>
+        <div>
+          <p><code>--list</code>: "/,/link1/path,/products" (required)</p>
+          <p class="desc">The path list to be followed by Frost. It is recommended that if you use mode="crawl", the list should have only one path (usually the home path "/").
+          </p>
+        </div>
+        <hr>
+        <div>
+          <p><code>--type</code>: The type of the Frost behavior, defaults to "page".</p>
+        </div>
+        <hr>
+        <div class="env">
+          <p><code>--env</code>: "default|local|hom|prod|etc" (default: "default")</p>
+          <p class="desc">Specifies what config file to use. The config files should be located at config/{<code>env</code>}.js</p>
+        </div>
+        <hr>
+        <div>
+          <p><code>--path-replace-inside-assets</code>: (default: false)</p>
+          <p class="desc">Makes the path replacing functionality work on the files given on the --list option</p>
+        </div>
+        <hr>
+        <div class="examples">
+          <p><b>Two basic implementation examples:</b></p>
+          <div class="example-list">
+            <p>1st "list"</p>
+            <code>$ frost --list="/,/products,/recipes" --mode="list" --env="{env}"</code>
+          </div>
+          <div class="example-crawl">
+            <p>2nd "crawl"</p>
+            <code>$ frost --list="/" --mode="crawl" --env="{env}"</code>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer" id="step-3">
+      <div class="powered-by">
+        <h3>Powered by</h3>
+        <a target="_blank" href="http://justdigital.com.br">
+          <i class="just-logo">Just Digital</i>
+        </a>
+      </div>
+    </section>
+    <script type="text/javascript" src="js/lib/smooth-scroll.min.js"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        selector: 'a'
+      });
+      /* https://github.com/cferdinandi/smooth-scroll */
+    </script>
+  </body>
+</html>

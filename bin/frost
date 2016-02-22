@@ -1,5 +1,0 @@
-#!/bin/bash
-
-command -v phantomjs >/dev/null 2>&1 || { echo >&2 "You will need phantomjs to run Frost but it's not installed.  Aborting."; exit 1; }
-
-phantomjs $(dirname $(readlink -f $0))/../index.js $@
