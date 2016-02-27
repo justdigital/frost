@@ -145,7 +145,7 @@ section {
 }
 
 .down-arrow {
-  background: url(images/down.png);
+  background: url(images/down-solid.png);
   width: 50px;
   position: absolute;
   height: 50px;
