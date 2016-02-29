@@ -41,7 +41,7 @@ section {
   height: 100%;
   position: relative;
   min-height: 360px;
-  padding: 20px 30px;
+  padding: 60px 30px 60px;
   box-sizing: border-box;
 }
 
@@ -163,6 +163,10 @@ section {
 .first-container {
   box-sizing: border-box;
   margin: 0 auto;
+}
+
+.first-container p {
+  color: white;
 }
 
 .highlighted-title {
