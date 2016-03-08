@@ -227,6 +227,27 @@ section {
   font-weight: bold;
 }
 
+.whats-is-icons {
+  font-size: 0;
+  padding: 0;
+  margin: 60px 0 50px 0;
+}
+
+.whats-is-icons li {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.whats-is-icons img {
+  width: 64px;
+}
+
+.whats-is-icons p {
+  margin: 5px 0 0;
+}
+
 .what-is-container h4 {
   text-align: center;
   margin-bottom: 60px;
