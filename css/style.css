@@ -23,6 +23,7 @@ h3 {
   font-weight: normal;
 }
 
+
 body {
   font-family: 'Quicksand', sans-serif;
 }
@@ -241,6 +242,7 @@ section {
   display: inline-block;
   width: 33%;
   text-align: center;
+  vertical-align: top;
   font-size: 18px;
 }
 
@@ -250,6 +252,11 @@ section {
 
 .whats-is-icons p {
   margin: 5px 0 0;
+  font-size: 21px;
+}
+
+.whats-is-icons span {
+  font-size: 16px;
 }
 
 .what-is-container h4 {
