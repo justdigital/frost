@@ -2,7 +2,7 @@
 
 # README
 
-###FROST- Static web page generator
+### FROST- Static web page generator
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ To make it easier to execute, create a symlink to the bin folder of your user:
 $ ln -s /path/to/frost/bin/frost /usr/local/bin/frost
 ```
 
-##Configuring Frost
+## Configuring Frost
 
 The Frost configuration files are located on the 'config' folder. Each file in that folder represents an `--env` option on execution. You can export the following variables inside the configuration files:
 
@@ -82,7 +82,7 @@ $ frost --list="/,/products,/recipes" --mode="list" --env="{env}"
 $ frost --list="/" --mode="crawl" --env="{env}"
 ```
 
-##Downloading assets
+## Downloading assets
 
 In some situations, you will need to download physical files from the dynamic site and put them in the static folder. For that, we have created the `--type` option.
 
