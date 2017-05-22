@@ -18,6 +18,7 @@ module.exports = {
   downloadAssets: false,                       // Whether to download assets or not (JS and CSS)
   userAgent: "Frost 1.0 Webkit",               // What user agent to use on the requests
   removeHashSymbol: false,                     // Transforms paths into hash, eg.: /#/foo/bar -> /foo/bar
+  addTrailingSlashToRelativeLinks: true,               // Adds trailing slash to avoid 301 from web servers, eg.: /foo/bar -> /foo/bar/
 
 
 
@@ -62,10 +63,7 @@ module.exports = {
   staticHostname: "example.com",             // destination hostname
   staticBaseUrl: function (postfix) {        // destination hostname generator
     
-    // by default postfix is a slash (/) because
-    // web-servers redirects (301) static urls with no trailing slash
-    // eg.: http://example.com/my/path to http://example.com/my/path/
-    postfix = postfix || "/";
+    postfix = postfix || "";
     return this.staticScheme + "://" + this.staticHostname + postfix;
   }
 };

@@ -40,6 +40,7 @@ The Frost configuration files are located on the 'config' folder. Each file in t
 |pageLoadTimeout|integer|The maximum time (in seconds) Frost will wait for the page to load
 |pathReplacePatterns|array|Frost will use this replace patterns on the moment of saving the files. Also, Frost will replace href on link tags. The replace objects must be declared like the example in the config/example-default.js file|
 |removeHashSymbol|bool|Transforms hash into path. eg. /#/foo/bar -> /foo/bar|
+|addTrailingSlashToRelativeLinks|bool|Adds trailing slash to avoid 301 from web servers, eg.: /foo/bar -> /foo/bar/|
 |scheme|"http/https"|The origin website protocol|
 |staticBaseUrl|function|Same as baseUrl but for the destination website|
 |staticDir|string|The path to the Frost root folder. This is where the static files will be put|

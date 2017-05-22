@@ -39,6 +39,7 @@ Os arquivos de configuração do Frost estão localizados na pasta 'config'. Cad
 |pageLoadTimeout|inteiro|O tempo máximo (em segundos) que o Frost vai aguardar o carregamento da página|
 |pathReplacePatterns|array|Esses patterns serão utilizados no momento de salvar os arquivos. Além disso, Frost vai aplicar essa regra em todos os atributos href de links.  Os objetos de replace deverão ser declarados como no arquivo config/default-example.js|
 |removeHashSymbol|bool|Transformar ou não hashes em paths. ex. /#/foo/bar -> /foo/bar|
+|addTrailingSlashToRelativeLinks|bool|Adiciona barra no final do path para evitar redirects 301 de web servers. ex. /foo/bar -> /foo/bar/|
 |scheme|"http/https"|O protocolo do site de origem|
 |staticBaseUrl|function|A função que retorna o base URL montado do site destino (sem barra no final)|
 |staticDir|string|O path relativo à root do Frost que aponta para a pasta onde os arquivos gerados devem ser salvos|
