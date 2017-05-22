@@ -61,7 +61,11 @@ module.exports = {
   staticScheme: "http",                      // http or https
   staticHostname: "example.com",             // destination hostname
   staticBaseUrl: function (postfix) {        // destination hostname generator
-    postfix = postfix || "";
+    
+    // by default postfix is a slash (/) because
+    // web-servers redirects (301) static urls with no trailing slash
+    // eg.: http://example.com/my/path to http://example.com/my/path/
+    postfix = postfix || "/";
     return this.staticScheme + "://" + this.staticHostname + postfix;
   }
 };
